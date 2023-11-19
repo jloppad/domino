@@ -53,6 +53,18 @@ try {
         var_dump($table->getTiles()); // Cuando se pinte saldra al reves?
     */
 
+    // Class Player
+
+    /*
+        $player = new Player();
+        $tile = new Tile(3, 5);
+        $player->addTile($tile);
+        $player->downTile($tile);
+        $tile1 = new Tile(6, 6);
+        $player->addTile($tile);
+        $player->addTile($tile1);
+        var_dump($player->countPips());
+    */
 
 } catch (Exception $e) {
     echo($e);
