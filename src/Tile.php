@@ -1,6 +1,6 @@
 <?php
 
-class tile
+class Tile
 {
     private int $right_pips;
     private int $left_pips;

@@ -1,6 +1,6 @@
 <?php
 
-class stock
+class Stock
 {
     private array $tiles;
 
@@ -35,7 +35,7 @@ class stock
     /**
      * @throws Exception
      */
-    public function getTile()
+    public function getTiles()
     {
         if ($this->isEmpty()) {
             throw new Exception("The stock is empty");
