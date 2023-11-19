@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #e6e6e6;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 30em;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#start {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+#start:hover {
+    background-color: #0056b3;
+}
+
+#borrar {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#borrar:hover {
+    background-color: #c00;
+}
+
+textarea {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+textarea:focus {
+    border-color: #007BFF;
+}
+
+#cancel, .verde, #add, #logout{
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+}
+
+.verde {
+    background-color: #44bd44;
+}
+
+.verde:hover {
+    background-color: #2d832d;
+}
+
+#add {
+    background-color: #007BFF;
+    width: 10em;
+    text-align: center;
+}
+
+#add:hover{
+    background-color: #0056b3;
+}
+
+#logout, #cancel{
+    background-color: #FF0000;
+}
+
+
+#logout:hover, #cancel:hover  {
+    background-color: #D00000;
+}
+
+#contenedor {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 3em;
+    padding: 3em;
+    border: 2px solid black;
+    border-radius: 2em;
+    background-color: #fcfcfc;
+}
+
+.unread {
+    font-weight: bold;
+}
+
+select {
+    width: 10em;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none;
+    display: block;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+select:hover {
+    border-color: #666;
+}
+
+#labelpass, #labeluser {
+    margin-left: 20em;
+}
