@@ -37,6 +37,13 @@ class Tile
         return false;
     }
 
+    public function flipTile(): void
+    {
+        $provisional_pips = $this->left_pips;
+        $this->left_pips = $this->right_pips;
+        $this->right_pips = $provisional_pips;
+    }
+
     public function countPips(): int
     {
         return $this->right_pips + $this->left_pips;

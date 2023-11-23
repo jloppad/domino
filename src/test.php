@@ -27,7 +27,7 @@ try {
 
     // Class Table
 
-    /*
+
         $table = new Table();
 
         $centerTile = new Tile(6,6);
@@ -44,14 +44,14 @@ try {
         var_dump($table->canConnectToTheLeft($rightTile));
         var_dump($table->canConnectToTheRight($rightTile));
         $table->addTileLeft($rightTile);
-        var_dump($table->getTiles()); // Cuando se pinte saldra al reves?
+        var_dump($table->getTiles());
 
-        $leftTile = new Tile(1,6);
+        $leftTile = new Tile(6,1);
         var_dump($table->canConnectToTheLeft($leftTile));
         var_dump($table->canConnectToTheRight($leftTile));
         $table->addTileRight($leftTile);
-        var_dump($table->getTiles()); // Cuando se pinte saldra al reves?
-    */
+        var_dump($table->getTiles()); // Se pone al reves
+
 
     // Class Player
 
