@@ -12,8 +12,13 @@ $user = $_SESSION['username'];
 
 if (isset($_POST['new'])){
     $game = new Game([$user],[$user => new Player()], new Stock(),new Table());
+    $datos = serialize($game);
+    $stmt = $db->prepare('INSERT INTO game (data) VALUES (:datos)');
+    $stmt->bindValue(':datos', $datos, PDO::PARAM_STR);
+    $stmt->execute();
+    $gameId = $db->lastInsertId();
     $_SESSION['game'] = $game;
-    header('Location: waiting.php');
+    header('Location: waiting.php?id=' . $gameId);
 }
 
 ?>
@@ -21,7 +26,7 @@ if (isset($_POST['new'])){
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Log in</title>
+    <title>Lobby</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -58,7 +63,7 @@ if (isset($_POST['new'])){
             $data = unserialize($game['data']);
             $usernames = $data->getUsernames();
 
-            echo "<table><tr> <td colspan='" . count($usernames) . "'> Partida " . $game['id'] . "</td></tr><tr>";
+            echo "<table><tr> <td colspan='" . count($usernames) . "'><a href='waiting.php?id=" . $game['id'] . "'> Partida " . $game['id'] . "</a></td></tr><tr>";
 
             foreach ($usernames as $username) {
                 echo "<td>" . $username . "</td>";

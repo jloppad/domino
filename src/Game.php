@@ -27,10 +27,12 @@ class Game
         $this->table = $table;
     }
 
-    public function addNewUsername(string $username): void
+    public function addNewPlayer(string $username): void
     {
-        $this->username[] = $username;
+
+        $this->usernames[] = $username;
         $this->players[$username] = new Player();
+
     }
 
     public function getUsernames(): array
