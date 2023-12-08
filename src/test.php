@@ -26,8 +26,6 @@ try {
         */
 
 
-
-
     // Class Table
 
     /*
@@ -71,10 +69,15 @@ try {
 
     // Class Game
 
-    /*
-        $game = new Game(["Javier","Antonio"],["Javier" => new Player(), "Antonio" => new Player()], new Stock(),new Table(), "Javier","Javier",new Tile(2,1));
+        // $game = new Game(["Maria","Luis","Juan Carletes"],["Maria" => new Player(), "Luis" => new Player(), "Juan Carletes" => new Player()], new Stock(),new Table(), "Luis","Maria", new Tile(2,4));
+        $game = new Game(["Lopez","Alvaro"],["Lopez" => new Player(), "Antonio" => new Player()], new Stock(),new Table(), "Javier","Javier",new Tile(2,1));
         var_dump($game);
-    */
+        $datos = serialize($game);
+        $db = new PDO('mysql:host=127.0.0.1;port=33060;dbname=domino', 'root', 'ejemplo_pass');
+        $stmt = $db->prepare('INSERT INTO game (data) VALUES (:datos)');
+        $stmt->bindValue(':datos', $datos, PDO::PARAM_STR);
+        $stmt->execute();
+
 
 } catch (Exception $e) {
     echo($e);

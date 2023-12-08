@@ -19,15 +19,39 @@ class Game
      * @param string $handUsername
      * @param Tile $selectedTile
      */
-    public function __construct(array $usernames, array $players, Stock $stock, Table $table, string $actualUsername, string $handUsername, Tile $selectedTile)
+    public function __construct(array $usernames, array $players, Stock $stock, Table $table)
     {
         $this->usernames = $usernames;
         $this->players = $players;
         $this->stock = $stock;
         $this->table = $table;
-        $this->actualUsername = $actualUsername;
-        $this->handUsername = $handUsername;
+    }
+
+    public function addNewUsername(string $username): void
+    {
+        $this->username[] = $username;
+        $this->players[$username] = new Player();
+    }
+
+    public function getUsernames(): array
+    {
+        return $this->usernames;
+    }
+
+    public function setSelectedTile(Tile $selectedTile): void
+    {
         $this->selectedTile = $selectedTile;
     }
+
+    public function setActualUsername(string $actualUsername): void
+    {
+        $this->actualUsername = $actualUsername;
+    }
+
+    public function setHandUsername(string $handUsername): void
+    {
+        $this->handUsername = $handUsername;
+    }
+
 
 }

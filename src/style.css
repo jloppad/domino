@@ -113,7 +113,7 @@ textarea:focus {
     border-color: #007BFF;
 }
 
-#cancel, .verde, #add, #logout{
+#cancel, .verde, #add, #new, #logout{
     display: block;
     margin: 10px auto;
     padding: 10px 20px;
@@ -130,13 +130,13 @@ textarea:focus {
     background-color: #2d832d;
 }
 
-#add {
+#add , #new{
     background-color: #007BFF;
     width: 10em;
     text-align: center;
 }
 
-#add:hover{
+#add:hover, #new:hover{
     background-color: #0056b3;
 }
 
