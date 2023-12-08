@@ -21,7 +21,7 @@ class Stock
         $this->tiles = [];
         for ($i = 0; $i <= 6; $i++) {
             for ($j = $i; $j <= 6; $j++) {
-                $tile = new tile($i, $j);
+                $tile = new Tile($i, $j);
                 $this->tiles[] = $tile;
             }
         }
@@ -35,7 +35,7 @@ class Stock
     /**
      * @throws Exception
      */
-    public function getTiles()
+    public function getTile()
     {
         if ($this->isEmpty()) {
             throw new Exception("The stock is empty");

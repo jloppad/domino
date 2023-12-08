@@ -45,6 +45,9 @@ class Table
         }
 
         if ($this->tiles[0]->connectsTo($t)) {
+            if ($this->tiles[0]->getLeftPips() == $t->getLeftPips()){
+                $t->flipTile();
+            }
             if ($this->tiles[0]->getLeftPips() == $t->getRightPips()) {
                 return true;
             }
@@ -59,6 +62,9 @@ class Table
         }
 
         if (end($this->tiles)->connectsTo($t)) {
+            if ($this->tiles[0]->getRightPips() == $t->getRightPips()){
+                $t->flipTile();
+            }
             if (end($this->tiles)->getRightPips() == $t->getLeftPips()) {
                 return true;
             }

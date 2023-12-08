@@ -27,8 +27,7 @@ class Game
         $this->table = $table;
         $this->actualUsername = $actualUsername;
         $this->handUsername = $handUsername;
-        $this->selectedTile = $selectedTile; // deberia crearlo????
+        $this->selectedTile = $selectedTile;
     }
-
 
 }

@@ -17,13 +17,16 @@ try {
         $stock = new Stock();
         var_dump($stock);
         var_dump($stock->getTile());
+    */
         /* Empty the stock
         for ($i = 0; $i < 27; $i++) {
             var_dump($stock->getTile());
         }
         var_dump($stock->isEmpty());
+        */
 
-    */
+
+
 
     // Class Table
 
@@ -44,13 +47,13 @@ try {
         var_dump($table->canConnectToTheLeft($rightTile));
         var_dump($table->canConnectToTheRight($rightTile));
         $table->addTileLeft($rightTile);
-        var_dump($table->getTiles()); // Cuando se pinte saldra al reves?
+        var_dump($table->getTiles());
 
-        $leftTile = new Tile(1,6);
+        $leftTile = new Tile(6,1);
         var_dump($table->canConnectToTheLeft($leftTile));
         var_dump($table->canConnectToTheRight($leftTile));
-        $table->addTileRight($leftTile);
-        var_dump($table->getTiles()); // Cuando se pinte saldra al reves?
+        $table->addTileRight($leftTile); // Se pone al reves
+        var_dump($table->getTiles());
     */
 
     // Class Player
@@ -66,7 +69,12 @@ try {
         var_dump($player->countPips());
     */
 
-    // Class Game ???
+    // Class Game
+
+    /*
+        $game = new Game(["Javier","Antonio"],["Javier" => new Player(), "Antonio" => new Player()], new Stock(),new Table(), "Javier","Javier",new Tile(2,1));
+        var_dump($game);
+    */
 
 } catch (Exception $e) {
     echo($e);
