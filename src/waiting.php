@@ -53,10 +53,12 @@ $stmt = $db->prepare('SELECT * FROM game where id = :id');
 $stmt->bindValue(':id', $id, PDO::PARAM_STR);
 $stmt->execute();
 $datagame = $stmt->fetch(PDO::FETCH_ASSOC);
+$gam = unserialize($datagame['data']);
 
-if ($datagame['active']){
+if ($datagame['active'] || count($gam->getUsernames()) == 4){
     header('Location: domino.php');
 }
+
 
 ?>
 <!doctype html>
