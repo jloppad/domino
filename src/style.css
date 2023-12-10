@@ -226,3 +226,8 @@ select:hover {
     margin: 1em;
 }
 
+.mark {
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(255,0,0,0.75);
+    box-shadow: 5px 5px 15px 5px rgba(255,0,0,0.75);
+}
+
