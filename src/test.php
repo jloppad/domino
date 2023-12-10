@@ -69,7 +69,7 @@ try {
 
     // Class Game
 
-        // $game = new Game(["Maria","Luis","Juan Carletes"],["Maria" => new Player(), "Luis" => new Player(), "Juan Carletes" => new Player()], new Stock(),new Table(), "Luis","Maria", new Tile(2,4));
+        // $game = new Game(["Maria","Luis","Juan Carlos"],["Maria" => new Player(), "Luis" => new Player(), "Juan Carletes" => new Player()], new Stock(),new Table(), "Luis","Maria", new Tile(2,4));
         $game = new Game(["Lopez","Alvaro"],["Lopez" => new Player(), "Antonio" => new Player()], new Stock(),new Table(), "Javier","Javier",new Tile(2,1));
         var_dump($game);
         $datos = serialize($game);
