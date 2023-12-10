@@ -29,9 +29,10 @@ class Game
 
     public function addNewPlayer(string $username): void
     {
-
-        $this->usernames[] = $username;
-        $this->players[$username] = new Player();
+        if (!in_array($username, $this->usernames)){
+            $this->usernames[] = $username;
+            $this->players[$username] = new Player();
+        }
 
     }
 

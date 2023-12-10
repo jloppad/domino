@@ -7,6 +7,10 @@ include 'Tile.php';
 include 'Player.php';
 global $db;
 session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: index.php");
+    die();
+}
 header("refresh:5");
 
 $username = $_SESSION['username'];
@@ -36,9 +40,22 @@ if (isset($_GET['id'])) {
         $stmt->bindValue(':datos', $datos, PDO::PARAM_STR);
         $stmt->bindValue(':id', $id, PDO::PARAM_STR);
         $stmt->execute();
-        $_SESSION['game'] = $game;
     }
+}
 
+if (isset($_POST['start'])){
+    $stmt = $db->prepare('UPDATE game SET active = 1 where id = :id');
+    $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+    $stmt->execute();
+}
+
+$stmt = $db->prepare('SELECT * FROM game where id = :id');
+$stmt->bindValue(':id', $id, PDO::PARAM_STR);
+$stmt->execute();
+$datagame = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($datagame['active']){
+    header('Location: domino.php');
 }
 
 ?>
@@ -57,16 +74,25 @@ if (isset($_GET['id'])) {
     <div id="contenedor">
         <table>
             <tr>
-                <td>Jugadores</td>
+                <th>Jugadores</th>
             </tr>
         <?php
              foreach ($usernames as $username){
+                 $game->addNewPlayer($username);
                  echo "<tr><td>" . $username ."</td></tr>";
              }
+            $_SESSION['game'] = $game;
         ?>
         </table>
     </div>
-    <button type="submit" name="new" id="new">New Game</button>
+    <?php
+        $disable = "disabled";
+        if (count($usernames) >= 2){
+            $disable = "";
+        }
+        echo '<button type="submit" name="start" id="new"' . $disable . '>Play</button>';
+    ?>
+
 </form>
 </body>
 </html>
