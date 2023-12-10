@@ -74,7 +74,7 @@ if ($datagame['active']){
     <div id="contenedor">
         <table>
             <tr>
-                <th>Jugadores</th>
+                <th>Players</th>
             </tr>
         <?php
              foreach ($usernames as $username){

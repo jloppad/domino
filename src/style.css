@@ -182,3 +182,47 @@ select:hover {
 #labelpass, #labeluser {
     margin-left: 20em;
 }
+
+.players {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em;
+}
+
+.players table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.players th, .players td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+.players th {
+    background-color: #333;
+    color: #fff;
+}
+
+.players tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.players tr:nth-child(odd) {
+    background-color: #e6e6e6;
+}
+
+.players tr:nth-last-child(1) td {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.players img {
+    transform: rotate(90deg);
+    margin: 1em;
+}
+

@@ -36,6 +36,36 @@ class Game
 
     }
 
+    public function getPlayers(): array
+    {
+        return $this->players;
+    }
+
+    public function setPlayers(array $players): void
+    {
+        $this->players = $players;
+    }
+
+    public function getStock(): Stock
+    {
+        return $this->stock;
+    }
+
+    public function setStock(Stock $stock): void
+    {
+        $this->stock = $stock;
+    }
+
+    public function getTable(): Table
+    {
+        return $this->table;
+    }
+
+    public function setTable(Table $table): void
+    {
+        $this->table = $table;
+    }
+
     public function getUsernames(): array
     {
         return $this->usernames;
